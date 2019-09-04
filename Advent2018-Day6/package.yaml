@@ -1,0 +1,53 @@
+name:                Advent2018-Day6
+version:             0.1.0.0
+github:              "niksko/Advent2018-Day6"
+license:             BSD3
+author:              "Nikolas Skoufis"
+maintainer:          "n.skoufis@gmail.com"
+copyright:           "2018 Nikolas Skoufis"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/niksko/Advent2018-Day6#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- hlint
+- QuickCheck
+- apply-refact
+
+library:
+  source-dirs: src
+
+executables:
+  Advent2018-Day6-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Advent2018-Day6
+
+tests:
+  Advent2018-Day6-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Advent2018-Day6
+    - QuickCheck
+    - hspec
